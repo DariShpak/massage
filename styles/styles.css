@@ -1,0 +1,76 @@
+:root {
+  --bg-color: #d2d0c3;
+  --accent-color: #bbb4a3;
+  --card-color: #c8c4b5;
+  --text-color: #ffffff;
+  --box-shadow: box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
+  --font-regular: "Montserrat", sans-serif;
+  --font-heading: "Nunito", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-regular);
+  font-size: 16px;
+}
+
+.list {
+  list-style: none;
+}
+
+.section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.container {
+  padding-left: 24px;
+  padding-right: 24px;
+
+  max-width: 375px;
+}
+
+/* header */
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-regular);
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+}
+
+
+
+
+/* hero */
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  letter-spacing: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-section {
+  background-image: url(/images/hero116.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
