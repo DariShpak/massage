@@ -144,15 +144,21 @@ address {
   padding-bottom: 16px;
   padding-left: 32px;
   padding-right: 32px;
-  border-radius: 50px;
+  border-radius: 60px;
   color: inherit;
   font-family: inherit;
   font-size: 18px;
   text-transform: uppercase;
   letter-spacing: 2;
-  border: 1px solid transparent;
-  background-color: var(--card-color);
-  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(217, 213, 204, 0.25)
+  );
+  backdrop-filter: blur(1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition: 150ms ease-in-out;
 
   max-width: 400px;
@@ -161,9 +167,13 @@ address {
 .button:hover,
 .button:focus {
   scale: 0.99;
-  box-shadow: var(--box-shadow-actions);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
+address {
+  color: var(--text-dark);
+  font-style: normal;
+}
 /* header */
 .header {
   backdrop-filter: blur(10px);
@@ -232,61 +242,61 @@ address {
 /* help */
 
 .help-section {
-  background-image: url(/images/hero102.png);
-  background-size: cover;
-  background-position: center;
+  background-image: url(/images/210.png);
+  background-size: contain;
+  background-position: right;
   background-repeat: no-repeat;
 
   height: auto;
 }
 
 .help-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
   gap: 72px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .help-card {
+  width: 320px;
+
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.35),
     rgba(217, 213, 204, 0.25)
   );
-  backdrop-filter: blur(2px);
   border-radius: 60px;
-  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+
+  padding: 12px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   transition:
     transform 0.5s ease,
     box-shadow 0.5s ease;
-
-  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .help-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--box-shadow-actions);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 .help-card-img {
-  width: 100%;
-  height: 160px;
-
   object-fit: contain;
 }
 
 .help-icon {
   fill: var(--text-dark);
+  padding: 12px;
 }
 
 /* how */
 .how-section {
-  background-image: url(/images/215.png);
+  background-image: url(/images/218.png);
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -369,9 +379,9 @@ address {
 /* price */
 
 .price-section {
-  background-image: url(/images/218.png);
+  background-image: url(/images/209.png);
   background-size: contain;
-  background-position: left;
+  background-position: right;
   background-repeat: no-repeat;
   height: auto;
 }
@@ -379,7 +389,7 @@ address {
 .tariffs-container {
   display: flex;
   gap: 40px;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   align-items: stretch;
 }
@@ -418,10 +428,51 @@ address {
   min-width: 30px;
 }
 
-.footer {
-  background-image: url(/images/212.png);
+/* contacts */
+.contacts-section {
+  background-image: url(/images/216.png);
   background-size: contain;
-  background-position: center;
+  background-position: left;
   background-repeat: no-repeat;
   height: auto;
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  text-align: center;
+}
+
+/* insta-section */
+
+.insta-section {
+  background-image: url(/images/315.png);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: auto;
+}
+
+/* footer */
+
+.footer {
+  background-image: url(/images/301.png);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+.footer-container {
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-text {
+  display: flex;
+  gap: 12px;
+  align-items: end;
 }
