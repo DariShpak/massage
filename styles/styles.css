@@ -223,7 +223,6 @@ address {
 
 .nav-item:hover {
   opacity: 1;
-  transform: scale(1.01);
 }
 
 .socials {
@@ -237,13 +236,12 @@ address {
 }
 
 .social-item:hover {
-  transform: scale(1.01);
   opacity: 1;
 }
 /* hero */
 
 .hero-section {
-  background-image: url(/images/208.png);
+  background-image: url(../images/208.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -279,7 +277,7 @@ address {
 /* help */
 
 .help-section {
-  background-image: url(/images/210.png);
+  background-image: url(../images/210.png);
   background-size: contain;
   background-position: right;
   background-repeat: no-repeat;
@@ -333,7 +331,7 @@ address {
 
 /* how */
 .how-section {
-  background-image: url(/images/218.png);
+  background-image: url(../images/218.png);
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -408,7 +406,7 @@ address {
 /* price */
 
 .price-section {
-  background-image: url(/images/209.png);
+  background-image: url(../images/209.png);
   background-size: 550px;
   background-position: right;
   background-repeat: no-repeat;
@@ -652,9 +650,9 @@ address {
 
 /* contacts */
 .contacts-section {
-  background-image: url(/images/216.png);
-  background-size: 550px;
-  background-position: left;
+  background-image: url(../images/216.png);
+  background-size: contain;
+  background-position: left bottom;
   background-repeat: no-repeat;
   height: auto;
 }
@@ -668,14 +666,13 @@ address {
 
 /* FORM */
 
-.form-section{
-    background-image: url(/images/301.png);
-  background-size: 400px;
-  background-position: right;
+.form-section {
+  background-image: url(../images/301.png);
+  background-size: 550px;
+  background-position: right bottom;
   background-repeat: no-repeat;
   height: auto;
 }
-
 
 .contact-form {
   display: flex;
@@ -789,8 +786,6 @@ address {
 
 /* insta-section */
 
-
-
 .insta-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -850,7 +845,7 @@ address {
 /* footer */
 
 .footer {
-  background-image: url(/images/hero109.png);
+  background-image: url(../images/hero109.png);
   background-size: contain;
   background-position: bottom;
   background-repeat: no-repeat;
