@@ -9,6 +9,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -16,9 +23,11 @@
       <div class="header-container container">
         <nav class="site-nav">
           <ul class="nav-list list">
-            <li class="nav-item">Про мене</li>
-            <li class="nav-item">Ціни</li>
-            <li class="nav-item">Контакти</li>
+            <li class="nav-item"><a href="#about" class="link">Про мене</a></li>
+            <li class="nav-item"><a href="#price" class="link">Ціни</a></li>
+            <li class="nav-item">
+              <a href="#booking" class="link">Записатися</a>
+            </li>
           </ul>
         </nav>
         <ul class="socials list">
@@ -41,12 +50,10 @@
         <div class="container hero-container">
           <h1 class="hero-title">Масажист Сергій Петрик</h1>
           <h2 class="hero-subtitle">
-            Уважно і мʼяко працюю з тілом. Вам буде комфортно зі мною.
+            Допомагаю тілу відпустити біль і напругу без агресивних методів.
           </h2>
-          <p class="hero-text">
-            Індивідуальна робота з причиною болю. Відновлення балансу тіла.
-          </p>
-          <button class="button">Записатись на масаж</button>
+          <p class="hero-text">Вам буде комфортно зі мною.</p>
+          <a href="#booking" class="button link">Записатись на масаж</a>
         </div>
       </section>
       <section class="section help-section fade-in">
@@ -105,7 +112,37 @@
           </ul>
         </div>
       </section>
+      <section class="section about-section" id="about">
+        <h2 class="section-title">Про мене</h2>
+        <div class="container about-container">
+          <div class="img-wrap">
+            <img src="./images/me.jpg" alt="фото Сергія Петрика" width="380" />
+          </div>
+          <div class="about-text">
+            <p class="section-text">
+              Я — спортсмен, кандидат у майстри спорту з рукопашного бою. Добре
+              знаю, що таке біль, травми та відновлення — і з власного досвіду,
+              і з багаторічної практики.
+            </p>
+            <p class="section-text">
+              Саме спорт навчив мене розуміти тіло глибше: як воно реагує на
+              навантаження, де накопичується напруга і чому біль не з’являється
+              випадково.
+            </p>
 
+            <p class="section-text">
+              У роботі я поєдную це розуміння з м’яким підходом. Тіло не
+              потрібно змушувати — йому потрібно допомогти. Для мене важливо,
+              щоб людина почувалась у безпеці та могла розслабитися.
+            </p>
+
+            <p class="section-text">
+              Кожен сеанс будується індивідуально під ваш запит і стан, адже
+              кожне тіло має свою історію і свій темп відновлення.
+            </p>
+          </div>
+        </div>
+      </section>
       <section class="section how-section">
         <h2 class="section-title">Як проходить сеанс</h2>
         <div class="container how-container">
@@ -132,62 +169,220 @@
           </div>
         </div>
       </section>
+      <section class="section testimonials-section">
+        <h2 class="section-title">Відгуки про мою роботу</h2>
+        <div class="container testimonials-container">
+          <button
+            class="slider-arrow slider-arrow-left"
+            aria-label="Попередній відгук"
+          >
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+          <div class="testimonials-slider">
+            <ul class="testimonials-list list">
+              <li class="testimonials-item">
+                <p class="section-text">
+                  ❝ Сергій - майстер своєї справи. Творить дива. Рекомендую! ❞
+                </p>
+              </li>
+              <li class="testimonials-item">
+                <p class="section-text">
+                  ❝ Дуже вдячна і задоволена лікуванням стопи у Сергія, погляд -
+                  рентген, дотик - цілющий, кращий ефект, ніж у апаратних
+                  методик. ❞
+                </p>
+              </li>
+              <li class="testimonials-item">
+                <p class="section-text">
+                  ❝ Майстер своєї справи. Велике дякую за допомогу бути
+                  здоровою! ❞
+                </p>
+              </li>
+
+              <li class="testimonials-item">
+                <p class="section-text">
+                  ❝ Доброго вечора!!! Дякую Вам за антицілюлитний масаж 🤗🤗🤗!
+                  Це 🔥🔥🔥, обʼєми зменшились, тіло підтянулось, а саме головне
+                  я отримала не тільки результат на тілі, а й задоволення від
+                  сеансів !!! Ви найкращий, буду Вас рекомендувати своїм
+                  подругам 😊😊😊 ❞
+                </p>
+              </li>
+
+              <li class="testimonials-item">
+                <p class="section-text">
+                  ❝ Сергій, велике спасибі за масаж, я стала новою людиною:
+                  випрямилась спина, покращилось дихання, захотілося правильно
+                  харчуватися. Ще раз дякую і до швидкої зустрічі 🙌🏻 ❞
+                </p>
+              </li>
+              <li class="testimonials-item">
+                <p class="section-text">
+                  ❝ За свою спину і шию, за отримане задоволення від масажу
+                  дякую Вам, Сергію! Після кожного масажу спина відразу
+                  випрямляється, хочеться тримати її рівно, всі затиски
+                  знімаються, настрій піднімається, з'являється відчуття
+                  легкості. Дякую за увагу, кожен раз цікавилися, як я себе
+                  почуваю (що дуже ГІДНО професіонала). Величезне Вам спасибі!
+                  Буду рекомендувати всім! ❞
+                </p>
+              </li>
+            </ul>
+          </div>
+          <button
+            class="slider-arrow slider-arrow-right"
+            aria-label="Наступний відгук"
+          >
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+          </button>
+        </div>
+      </section>
       <section class="section osteopath-section">
         <h2 class="section-title">Як зрозуміти, що вам потрібен остеопат</h2>
         <div class="container osteopath-container">
-          <p class="section-text">
-            Ваше тіло постійно надсилає сигнали — важливо їх вчасно почути.
-          </p>
-          <p class="section-text">
-            Зверніться до остеопата, якщо вас турбує: <br />Хронічний біль у
-            спині, шиї або суглобах — який не зникає після відпочинку і
-            повертається знову й знову. <br />Часті головні болі та мігрені —
-            особливо якщо вони пов'язані з напругою в шийному відділі. <br />
-            Скутість і обмеження рухливості — коли звичні рухи даються з
-            дискомфортом. <br />
-            Порушення постави — сутулість, асиметрія плечей, перекос тазу.
-            <br />Проблеми зі сном і хронічна втома — коли організм не
-            відновлюється навіть після повноцінного відпочинку. <br />
-            Стрес і м'язова напруга — тіло накопичує напругу, яка з часом
-            перетворюється на біль. <br />Відновлення після травм або операцій —
-            коли потрібно повернути тілу природну рухливість і баланс.
-            <br />Остеопатія працює з причиною, а не з симптомом. М'які
-            мануальні техніки допомагають відновити правильну роботу
-            опорно-рухового апарату, покращити кровообіг і запустити природні
-            механізми самовідновлення організму. Без медикаментів, без болю —
-            лише руки фахівця та індивідуальний підхід.
-          </p>
-        </div>
-      </section>
-      <section class="section about-section">
-        <h2 class="section-title">Про мене</h2>
-        <div class="container about-container">
           <div class="img-wrap">
-            <img src="./images/me.jpg" alt="фото Сергія Петрика" width="460" />
+            <img
+              src="./images/osteo.jpg"
+              width="460"
+              alt="сеанс остеопатичного масажу"
+            />
           </div>
-          <div class="about-text">
-            <p class="section-text">
-              Я — спортсмен, кандидат у майстри спорту з рукопашного бою. Тому
-              добре знаю, що таке біль — у спині, м’язах, суглобах, а також
-              наслідки травм і перевантажень. За роки тренувань я пройшов через
-              забої, травми та реабілітацію, що й стало основою мого
-              професійного шляху. Я постійно навчаюся та поглиблюю знання, щоб
-              розуміти, що відбувається з тілом у моменти, коли воно перестає
-              працювати як слід. У своїй роботі я допомагаю визначити м’язову
-              природу болю та знайти його першопричину. Працюю індивідуально,
-              адже кожне тіло потребує власного підходу.
-            </p>
-          </div>
+          <ul class="osteo-list list">
+            <li class="osteo-item">
+              <div class="osteo-header">
+                <p class="section-text osteo-title">
+                  Хронічний біль у спині, шиї або суглобах
+                </p>
+                <span class="osteo-arrow">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="osteo-content">
+                <p class="section-text">
+                  Який не зникає після відпочинку і повертається знову й знову.
+                  Остеопат знаходить першопричину болю та працює з нею.
+                </p>
+              </div>
+            </li>
+            <li class="osteo-item">
+              <div class="osteo-header">
+                <p class="section-text osteo-title">
+                  Часті головні болі та мігрені
+                </p>
+                <span class="osteo-arrow">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="osteo-content">
+                <p class="section-text">
+                  Особливо якщо вони пов'язані з напругою в шийному відділі.
+                  М'які техніки допомагають зняти напругу та покращити
+                  кровообіг.
+                </p>
+              </div>
+            </li>
+            <li class="osteo-item">
+              <div class="osteo-header">
+                <p class="section-text osteo-title">
+                  Скутість і обмеження рухливості
+                </p>
+                <span class="osteo-arrow">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="osteo-content">
+                <p class="section-text">
+                  Коли звичні рухи даються з дискомфортом. Остеопатія відновлює
+                  природну амплітуду рухів.
+                </p>
+              </div>
+            </li>
+            <li class="osteo-item">
+              <div class="osteo-header">
+                <p class="section-text osteo-title">Порушення постави</p>
+                <span class="osteo-arrow">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="osteo-content">
+                <p class="section-text">
+                  Сутулість, асиметрія плечей, перекос тазу. Робота з м'язами та
+                  фасціями допомагає відновити баланс тіла.
+                </p>
+              </div>
+            </li>
+            <li class="osteo-item">
+              <div class="osteo-header">
+                <p class="section-text osteo-title">
+                  Проблеми зі сном і хронічна втома
+                </p>
+                <span class="osteo-arrow">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="osteo-content">
+                <p class="section-text">
+                  Коли організм не відновлюється навіть після повноцінного
+                  відпочинку. Остеопатія допомагає запустити природні механізми
+                  самовідновлення.
+                </p>
+              </div>
+            </li>
+            <li class="osteo-item">
+              <div class="osteo-header">
+                <p class="section-text osteo-title">Стрес і м'язова напруга</p>
+                <span class="osteo-arrow">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="osteo-content">
+                <p class="section-text">
+                  Тіло накопичує напругу, яка з часом перетворюється на біль.
+                  М'які мануальні техніки допомагають розслабитись.
+                </p>
+              </div>
+            </li>
+            <li class="osteo-item">
+              <div class="osteo-header">
+                <p class="section-text osteo-title">
+                  Відновлення після травм або операцій
+                </p>
+                <span class="osteo-arrow">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </span>
+              </div>
+              <div class="osteo-content">
+                <p class="section-text">
+                  Коли потрібно повернути тілу природну рухливість і баланс без
+                  медикаментів та болю.
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
 
-      <section class="section price-section">
+      <section class="section price-section" id="price">
         <h2 class="section-title">Ціни</h2>
         <div class="container price-container">
           <div class="tariffs-container">
             <div class="tariff-plans">
               <div class="tariff-row">
-                <span class="section-text">Загальний масаж</span>
+                <span class="section-text">Остеопатична сесія</span>
                 <span class="tariff-size">5000</span>
               </div>
               <div class="tariff-row">
@@ -195,6 +390,13 @@
                 <span class="tariff-size">5000</span>
               </div>
               <div class="tariff-row">
+                <span class="section-text">Відновлювальний масаж</span>
+                <span class="tariff-size">5000</span>
+              </div>
+               <div class="tariff-row">
+                <span class="section-text">Чоловічий масаж</span>
+                <span class="tariff-size">5000</span>
+              </div> <div class="tariff-row">
                 <span class="section-text">Лімфодренажний масаж</span>
                 <span class="tariff-size">5000</span>
               </div>
@@ -202,10 +404,7 @@
           </div>
         </div>
       </section>
-      <section class="section testimonials-section">
-        <h2 class="section-title">Відгуки про мою роботу</h2>
-        <div class="container testimonials-container"></div>
-      </section>
+
       <section class="section contacts-section">
         <h2 class="section-title">Контакти</h2>
         <div class="container contacts-container">
@@ -219,31 +418,167 @@
             >
           </address>
           <address class="section-text">Метро "Лівобережна"</address>
+          <p class="section-text">Пн - Пт з 10.00 до 19.00</p>
+        </div>
+      </section>
+      <section class="section form-section" id="booking">
+        <h2 class="section-title">Записатися на масаж або задати питання</h2>
+        <div class="container form-container">
+          <form
+            class="contact-form"
+            id="my-form"
+            action="https://formspree.io/f/xkovydoa"
+            method="POST"
+          >
+            <h3 class="section-subtitle">Заповніть, будь ласка, форму</h3>
+            <input
+              class="form-input section-text"
+              type="text"
+              name="name"
+              placeholder="Ваше імʼя"
+              id="name"
+              required
+            />
+            <input
+              class="form-input section-text"
+              type="text"
+              name="phone"
+              placeholder="Ваш контактний номер телефону або месенджер"
+              id="phone"
+              required
+            />
+            <textarea
+              class="section-text form-input"
+              name="message"
+              id="message"
+              placeholder="Ваш запит, питання або коментар"
+            ></textarea>
+
+            <div class="date-time-wrap">
+              <div class="form-field">
+                <label for="date" class="section-text"
+                  >Оберіть зручну дату</label
+                >
+                <input
+                  class="form-input section-text date-input"
+                  type="date"
+                  name="date"
+                  id="date"
+                />
+              </div>
+              <div class="form-field">
+                <label for="time" class="section-text"
+                  >Оберіть бажаний час</label
+                >
+                <input
+                  class="form-input section-text time-input"
+                  type="time"
+                  name="time"
+                  id="time"
+                />
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="section-text" for="service">Оберіть послугу</label>
+              <select
+                class="form-input service-select section-text"
+                name="service"
+                id="service"
+              >
+                <option value="classic-massage">Класичний масаж</option>
+                <option value="osteopathic">Остеопатичний сеанс</option>
+                <option value="taping">Тейпування</option>
+              </select>
+            </div>
+            <button type="submit" class="button form-btn">Надіслати</button>
+          </form>
         </div>
       </section>
       <section class="section insta-section">
-        <div class="container insta-contaienr">
+        <div class="container insta-container">
           <h2 class="section-title">Мій Instagram</h2>
+          <div class="insta-grid">
+            <a
+              href="https://www.instagram.com/massage_sergey_petrik/"
+              target="_blank"
+              class="insta-card"
+            >
+              <div class="insta-placeholder">
+                <svg class="insta-icon">
+                  <use href="./images/icons/sprite.svg#icon-massage7"></use>
+                </svg>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/massage_sergey_petrik/"
+              target="_blank"
+              class="insta-card"
+            >
+              <div class="insta-placeholder">
+                <svg class="insta-icon">
+                  <use href="./images/icons/sprite.svg#icon-massage5"></use>
+                </svg>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/massage_sergey_petrik/"
+              target="_blank"
+              class="insta-card"
+            >
+              <div class="insta-placeholder">
+                <svg class="insta-icon">
+                  <use href="./images/icons/sprite.svg#icon-massage2"></use>
+                </svg>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/massage_sergey_petrik/"
+              target="_blank"
+              class="insta-card"
+            >
+              <div class="insta-placeholder">
+                <svg class="insta-icon">
+                  <use href="./images/icons/sprite.svg#icon-massage4"></use>
+                </svg>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer section">
       <div class="container footer-container">
-        <div class="footer-credits">
-          <p class="section-text">&copy; Сергій Петрик, 2026</p>
-          <p class="section-text footer-text">
-            Розроблено з
-            <img
-              src="./images/icons/noun-leaves-6542438.png"
-              alt=""
-              width="28"
-            />
-            <a class="link dari-link" href="mailto:dari.shpak.codes@gmail.com">
-              Dari Shpak</a
+        <div class="footer-content">
+          <div class="footer-info">
+            <h3 class="footer-title">Сергій Петрик</h3>
+            <p class="footer-subtitle">Професійний масажист</p>
+          </div>
+
+          <p class="footer-copy">
+            Всі права захищені &copy; 2026 Сергій Петрик
+          </p>
+          <p class="footer-credits">
+            Розроблено з ♡
+            <a class="link dari-link" href="mailto:dari.shpak.codes@gmail.com"
+              >Dari Shpak</a
             >
           </p>
         </div>
       </div>
     </footer>
+
+    <button
+      class="scroll-up-btn"
+      id="scrollUpBtn"
+      aria-label="Прокрутити вгору"
+    >
+      <svg viewBox="0 0 24 24">
+        <path d="M5 12h14M13 6l6 6-6 6" />
+      </svg>
+    </button>
+
+    <script src="js/slider.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/scroll-up.js"></script>
   </body>
 </html>
