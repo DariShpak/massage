@@ -256,10 +256,10 @@ address {
 
 .hero-title {
   font-size: 52px;
-  font-weight: 400;
+  font-weight: 500;
 
-  margin-bottom: 72px;
-  letter-spacing: var(--letter-spacing-heading);
+  margin-bottom: 68px;
+  letter-spacing: var(--letter-spacing);
 }
 
 .hero-subtitle {
@@ -648,6 +648,15 @@ address {
   transform: rotate(180deg);
 }
 
+.cta-section {
+  margin-bottom: 96px;
+}
+
+.cta-container {
+  display: flex;
+  justify-content: center;
+}
+
 /* contacts */
 .contacts-section {
   background-image: url(../images/216.png);
@@ -667,7 +676,7 @@ address {
 /* FORM */
 
 .form-section {
-  background-image: url(./images/301.png);
+  background-image: url(../images/301.png);
   background-size: 500px;
   background-position: left top;
   background-repeat: no-repeat;
@@ -679,8 +688,18 @@ address {
   flex-direction: column;
   flex-wrap: wrap;
   gap: 16px;
-  max-width: 800px;
+  max-width: 900px;
   align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(217, 213, 204, 0.1)
+  );
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(1px);
+  padding: 32px 40px;
 }
 .form-container {
   display: flex;
@@ -858,7 +877,6 @@ address {
 }
 
 .footer-content {
-  margin-top: 96px;
   display: flex;
   flex-direction: column;
 
@@ -866,7 +884,7 @@ address {
 }
 
 .footer-info {
-  margin-top: 96px;
+  margin-top: 56px;
   flex: 1;
   min-width: 240px;
   margin-bottom: 36px;
@@ -878,6 +896,10 @@ address {
   letter-spacing: var(--letter-spacing-heading);
   text-transform: uppercase;
   margin-bottom: 8px;
+}
+
+.footer-subtitle {
+  line-height: 1.5;
 }
 
 .footer-copy {
