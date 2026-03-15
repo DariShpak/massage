@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Остеопат Сергій Петрик</title>
+    <meta name="description" content="Остеопат Сергій Петрик — м'яка робота з тілом. Остеопатія, масаж, суха голка. Київ, ТРЦ Комод." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg-color: #d2d0c3;
+        --accent-color: #bbb4a3;
+        --card-color: #c8c4b5;
+        --text-color: #ffffff;
+        --text-dark: #505050;
+        --letter-spacing: 1.5px;
+        --letter-spacing-heading: 3px;
+        --box-shadow: rgba(0,0,0,0.26) 0px 0.637473px 1.14745px -1.125px, rgba(0,0,0,0.24) 0px 1.93094px 3.4757px -2.25px, rgba(0,0,0,0.192) 0px 5.10423px 9.18761px -3.375px, rgba(0,0,0,0.03) 0px 16px 28.8px -4.5px;
+        --border-radius: 50px;
+        --glass: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(217,213,204,0.25));
+        --glass-border: 1px solid rgba(255,255,255,0.4);
+        --glass-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      }
+      html { scroll-behavior: smooth; }
+      *, *::before, *::after { box-sizing: border-box; }
+      body { background-color: var(--bg-color); color: var(--text-dark); font-family: "Montserrat", sans-serif; font-size: 16px; font-weight: 500; letter-spacing: var(--letter-spacing); -webkit-font-smoothing: antialiased; margin: 0; }
+      h1,h2,h3,h4,p { margin-top:0; margin-bottom:0; }
+      ul,ol { margin-top:0; margin-bottom:0; padding-left:0; }
+      img { display:block; max-width:100%; height:auto; }
+      address { font-style:normal; color:var(--text-dark); }
+      .list { list-style:none; }
+      .link { text-decoration:none; color:var(--text-dark); cursor:pointer; position:relative; transition:all 0.5s ease; opacity:0.9; }
+      .link:visited { color:var(--text-dark); }
+      .link:hover,.link:focus { outline:none; opacity:1; }
+      .section { padding-top:96px; padding-bottom:96px; }
+      .img-wrap img { border-radius:18px; }
+      .container { padding-left:24px; padding-right:24px; max-width:375px; }
+      @media screen and (min-width:375px) { .container { max-width:767px; } }
+      @media screen and (min-width:768px) { .container { max-width:1023px; } }
+      @media screen and (min-width:1024px) { .container { margin-left:auto; margin-right:auto; padding-left:48px; padding-right:48px; max-width:1391px; } }
+      .section-title { font-size:36px; font-weight:400; letter-spacing:var(--letter-spacing-heading); text-transform:uppercase; text-align:center; color:var(--text-dark); margin-bottom:96px; }
+      .section-subtitle { font-size:22px; font-weight:400; letter-spacing:var(--letter-spacing-heading); text-transform:uppercase; margin-bottom:24px; }
+      .section-text { line-height:1.5; font-size:18px; }
+      .button { cursor:pointer; padding:16px 32px; border-radius:var(--border-radius); color:inherit; font-family:inherit; font-size:18px; text-transform:uppercase; letter-spacing:2px; border:var(--glass-border); background:var(--glass); backdrop-filter:blur(4px); box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:0.5s ease; text-align:center; max-width:400px; display:inline-block; text-decoration:none; }
+      .button:hover,.button:focus { transform:scale(1.02); box-shadow:0 8px 16px rgba(0,0,0,0.12); }
+
+      /* HEADER */
+      .header { backdrop-filter:blur(10px); transition:background 0.3s; position:sticky; top:0; z-index:100; background:rgba(210,208,195,0.85); }
+      .header-container { display:flex; justify-content:space-between; align-items:center; font-size:18px; text-transform:uppercase; padding-left:24px; padding-right:24px; max-width:1391px; margin:0 auto; }
+      @media screen and (min-width:1024px) { .header-container { padding-left:48px; padding-right:48px; } }
+      .nav-list { display:flex; gap:30px; }
+      .nav-item { padding-top:32px; padding-bottom:32px; cursor:pointer; opacity:0.9; transition:all 0.5s ease; list-style:none; }
+      .nav-item:hover { opacity:1; }
+      .socials { display:flex; gap:20px; }
+      .social-item { transition:all 0.5s ease; opacity:0.9; }
+      .social-item:hover { opacity:1; }
+
+      /* HERO */
+      .hero-section { background-image:url(https://darishpak.github.io/images/208.png); background-size:cover; background-position:center; background-repeat:no-repeat; height:800px; }
+      .hero-container { display:flex; flex-direction:column; }
+      .hero-title { font-size:52px; font-weight:500; margin-bottom:68px; letter-spacing:var(--letter-spacing); }
+      .hero-subtitle { font-size:28px; font-weight:400; margin-bottom:24px; }
+      .hero-text { font-size:22px; margin-bottom:72px; font-weight:400; }
+
+      /* PHILOSOPHY */
+      .philosophy-section { background-color:#c5c2b4; position:relative; overflow:hidden; }
+      .philosophy-section::before { content:''; position:absolute; inset:0; background-image:url(https://darishpak.github.io/images/210.png); background-size:contain; background-position:right center; background-repeat:no-repeat; opacity:0.25; pointer-events:none; }
+      .philosophy-container { display:flex; flex-direction:column; gap:48px; position:relative; }
+      @media screen and (min-width:768px) { .philosophy-container { flex-direction:row; align-items:flex-start; gap:80px; } }
+      .philosophy-left { flex:1; }
+      .philosophy-right { flex:1.4; }
+      .philosophy-quote { padding:28px 36px; border-left:3px solid rgba(80,80,80,0.25); margin-top:32px; font-size:20px; font-weight:400; line-height:1.6; letter-spacing:0.5px; font-style:italic; opacity:0.85; }
+      .philosophy-text { font-size:17px; line-height:1.7; margin-bottom:16px; opacity:0.85; }
+
+      /* HELP */
+      .help-section { background-image:url(https://darishpak.github.io/images/210.png); background-size:contain; background-position:right; background-repeat:no-repeat; height:auto; }
+      .help-list { display:flex; flex-wrap:wrap; justify-content:center; gap:72px; }
+      .help-card { width:320px; background:var(--glass); border-radius:var(--border-radius); border:var(--glass-border); backdrop-filter:blur(4px); padding:12px; text-align:center; position:relative; overflow:hidden; box-shadow:var(--glass-shadow); transition:all 0.5s ease; }
+      .help-card:hover { transform:scale(1.02); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+      .help-icon { fill:var(--text-dark); padding:12px; transition:all 0.5s ease; }
+
+      /* OSTEOPATHY EXPLAINED */
+      .osteopathy-section { background-image:url(https://darishpak.github.io/images/218.png); background-size:contain; background-position:left bottom; background-repeat:no-repeat; }
+      .osteopathy-intro { max-width:760px; margin:0 auto 64px; text-align:center; font-size:17px; line-height:1.7; opacity:0.85; }
+      .osteopathy-cards { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; margin-bottom:64px; }
+      .osteopathy-card { width:100%; padding:32px 36px; background:var(--glass); border-radius:var(--border-radius); border:var(--glass-border); backdrop-filter:blur(4px); box-shadow:var(--glass-shadow); transition:all 0.5s ease; }
+      @media screen and (min-width:768px) { .osteopathy-card { width:calc(50% - 12px); } }
+      .osteopathy-card:hover { transform:scale(1.02); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+      .osteopathy-card-title { font-size:18px; font-weight:600; letter-spacing:var(--letter-spacing-heading); text-transform:uppercase; margin-bottom:12px; }
+      .osteopathy-card-text { font-size:16px; line-height:1.7; font-weight:400; opacity:0.85; }
+      .compare-wrap { padding:40px 48px; background:var(--glass); border-radius:var(--border-radius); border:var(--glass-border); backdrop-filter:blur(4px); box-shadow:var(--glass-shadow); overflow-x:auto; }
+      .compare-title { font-size:18px; font-weight:600; letter-spacing:var(--letter-spacing-heading); text-transform:uppercase; margin-bottom:32px; text-align:center; }
+      .compare-table { width:100%; border-collapse:collapse; min-width:500px; }
+      .compare-table thead tr { border-bottom:2px solid rgba(80,80,80,0.15); }
+      .compare-table th { padding:12px 16px; text-align:left; font-size:13px; font-weight:600; letter-spacing:var(--letter-spacing-heading); text-transform:uppercase; opacity:0.6; }
+      .compare-table td { padding:14px 16px; font-size:15px; font-weight:400; border-bottom:1px solid rgba(80,80,80,0.08); line-height:1.5; }
+      .compare-table td:first-child { font-weight:600; opacity:0.7; white-space:nowrap; font-size:13px; text-transform:uppercase; letter-spacing:1px; }
+      .compare-table td:nth-child(3) { opacity:0.65; }
+      .compare-table tr:last-child td { border-bottom:none; }
+
+      /* BODY REMEMBERS */
+      .body-remembers-section { background-image:url(https://darishpak.github.io/images/209.png); background-size:500px; background-position:right top; background-repeat:no-repeat; }
+      .body-remembers-container { display:flex; flex-direction:column; gap:48px; }
+      @media screen and (min-width:768px) { .body-remembers-container { flex-direction:row; align-items:flex-start; gap:80px; } }
+      .body-remembers-left { flex:1.2; }
+      .body-remembers-intro { font-size:17px; line-height:1.7; margin-bottom:16px; font-weight:400; opacity:0.85; }
+      .body-remembers-right { flex:1; }
+      .body-points { display:flex; flex-direction:column; gap:16px; }
+      .body-point { display:flex; align-items:flex-start; gap:20px; padding:20px 28px; background:var(--glass); border-radius:var(--border-radius); border:var(--glass-border); backdrop-filter:blur(4px); box-shadow:var(--glass-shadow); transition:all 0.5s ease; }
+      .body-point:hover { transform:scale(1.02); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+      .body-point-num { width:44px; height:44px; min-width:44px; border-radius:50%; background:var(--card-color); display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:500; color:var(--text-dark); }
+      .body-point-content h4 { font-size:15px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; }
+      .body-point-content p { font-size:14px; font-weight:400; line-height:1.6; opacity:0.8; }
+
+      /* METHODS */
+      .methods-section { background-image:url(https://darishpak.github.io/images/301.png); background-size:450px; background-position:left top; background-repeat:no-repeat; }
+      .methods-grid { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; }
+      .method-card { width:100%; padding:32px 36px; background:var(--glass); border-radius:var(--border-radius); border:var(--glass-border); backdrop-filter:blur(4px); box-shadow:var(--glass-shadow); transition:all 0.5s ease; position:relative; }
+      @media screen and (min-width:768px) { .method-card { width:calc(50% - 12px); } }
+      .method-card:hover { transform:scale(1.02); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+      .method-icon { font-size:28px; margin-bottom:16px; display:block; }
+      .method-tag { position:absolute; top:28px; right:28px; font-size:11px; letter-spacing:1.5px; text-transform:uppercase; opacity:0.5; font-weight:500; }
+      .method-title { font-size:16px; font-weight:600; letter-spacing:var(--letter-spacing-heading); text-transform:uppercase; margin-bottom:12px; }
+      .method-text { font-size:15px; font-weight:400; line-height:1.7; opacity:0.85; }
+
+      /* HOW */
+      .how-section { background-image:url(https://darishpak.github.io/images/218.png); background-size:contain; background-position:left; background-repeat:no-repeat; height:auto; }
+      .how-container { display:flex; justify-content:space-around; }
+      .how-list { max-width:660px; display:flex; flex-direction:column; gap:24px; }
+      .how-item { display:flex; align-items:flex-start; gap:20px; padding:20px 30px; background:var(--glass); border-radius:var(--border-radius); border:var(--glass-border); backdrop-filter:blur(4px); transition:transform 0.3s ease; }
+      .how-item:hover { transform:scale(1.02); }
+      .how-number { width:44px; height:44px; min-width:44px; border-radius:50%; background:var(--card-color); display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:500; color:var(--text-dark); }
+      .how-item-content h4 { font-size:15px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; }
+      .how-item-content p { font-size:14px; font-weight:400; line-height:1.6; opacity:0.8; }
+
+      /* ABOUT */
+      .about-container { display:flex; justify-content:space-around; align-items:flex-start; gap:60px; flex-wrap:wrap; }
+      .about-text { display:flex; flex-wrap:wrap; max-width:760px; text-align:justify; }
+      .about-text p { font-size:17px; line-height:1.7; margin-bottom:14px; width:100%; }
+      .about-stats { display:flex; flex-wrap:wrap; gap:32px; margin-top:40px; padding-top:40px; border-top:1px solid rgba(80,80,80,0.15); width:100%; }
+      .stat-num { font-size:42px; font-weight:300; letter-spacing:-1px; color:var(--text-dark); display:block; line-height:1; }
+      .stat-label { font-size:12px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; opacity:0.6; margin-top:6px; display:block; }
+
+      /* OSTEOPATH ACCORDION */
+      .osteopath-section { height:auto; }
+      .osteopath-container { display:flex; justify-content:space-around; align-items:flex-start; gap:60px; flex-wrap:wrap; }
+      .osteo-list { max-width:660px; display:flex; flex-direction:column; gap:20px; }
+      .osteo-item { display:flex; flex-direction:column; padding:20px 30px; background:linear-gradient(135deg,rgba(255,255,255,0.3),rgba(217,213,204,0.2)); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.35); backdrop-filter:blur(1px); box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.3s ease; cursor:pointer; }
+      .osteo-item:hover { box-shadow:0 4px 12px rgba(0,0,0,0.1); transform:scale(1.02); }
+      .osteo-header { display:flex; align-items:center; justify-content:space-between; width:100%; gap:20px; }
+      .osteo-title { margin:0; flex:1; }
+      .osteo-arrow { width:36px; height:36px; border-radius:50%; border:1.5px solid var(--text-dark); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s ease; opacity:0.6; flex-shrink:0; }
+      .osteo-arrow svg { width:18px; height:18px; stroke:var(--text-dark); stroke-width:2; fill:none; transform:rotate(90deg); transition:all 0.3s ease; }
+      .osteo-item:hover .osteo-arrow { opacity:1; }
+      .osteo-content { overflow:hidden; transition:all 0.4s ease; opacity:0; max-height:0; }
+      .osteo-content p { margin:0; font-size:16px; padding-top:12px; font-weight:400; line-height:1.65; }
+      .osteo-item.active .osteo-content { opacity:1; max-height:500px; }
+      .osteo-item.active .osteo-arrow { opacity:1; }
+      .osteo-item.active .osteo-arrow svg { transform:rotate(-90deg); }
+
+      /* FAQ */
+      .faq-section { background-image:url(https://darishpak.github.io/images/216.png); background-size:contain; background-position:right bottom; background-repeat:no-repeat; }
+      .faq-list { max-width:760px; display:flex; flex-direction:column; gap:16px; margin:0 auto; }
+      .faq-item { display:flex; flex-direction:column; padding:20px 30px; background:linear-gradient(135deg,rgba(255,255,255,0.3),rgba(217,213,204,0.2)); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.35); backdrop-filter:blur(1px); box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.3s ease; cursor:pointer; }
+      .faq-item:hover { box-shadow:0 4px 12px rgba(0,0,0,0.1); transform:scale(1.02); }
+      .faq-header { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+      .faq-q { font-size:17px; font-weight:500; letter-spacing:1px; flex:1; margin:0; }
+      .faq-arrow { width:36px; height:36px; border-radius:50%; border:1.5px solid var(--text-dark); display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; opacity:0.6; flex-shrink:0; }
+      .faq-arrow svg { width:18px; height:18px; stroke:var(--text-dark); stroke-width:2; fill:none; transform:rotate(90deg); transition:all 0.3s ease; }
+      .faq-item:hover .faq-arrow { opacity:1; }
+      .faq-content { overflow:hidden; transition:all 0.4s ease; opacity:0; max-height:0; }
+      .faq-content p { margin:0; font-size:16px; padding-top:12px; font-weight:400; line-height:1.65; opacity:0.85; }
+      .faq-item.active .faq-content { opacity:1; max-height:300px; }
+      .faq-item.active .faq-arrow { opacity:1; }
+      .faq-item.active .faq-arrow svg { transform:rotate(-90deg); }
+
+      /* TESTIMONIALS */
+      .testimonials-container { display:flex; align-items:center; justify-content:center; gap:80px; max-width:100%; margin:0 auto; padding:0 100px; }
+      .testimonials-slider { overflow:hidden; width:800px; }
+      .testimonials-list { display:flex; gap:0; transition:transform 0.5s ease; }
+      .testimonials-item { width:800px; flex-shrink:0; background:linear-gradient(135deg,rgba(255,255,255,0.15),rgba(217,213,204,0.1)); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.2); backdrop-filter:blur(1px); padding:32px 40px; display:flex; align-items:center; justify-content:center; position:relative; box-shadow:0 2px 8px rgba(0,0,0,0.06); box-sizing:border-box; font-size:17px; font-weight:400; line-height:1.65; text-align:center; }
+      .slider-arrow { width:44px; height:44px; border-radius:50%; border:1.5px solid var(--text-dark); background:transparent; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s ease; opacity:0.6; flex-shrink:0; padding:0; }
+      .slider-arrow svg { width:18px; height:18px; stroke:var(--text-dark); stroke-width:2; fill:none; transition:all 0.3s ease; }
+      .slider-arrow:hover { opacity:1; }
+      .slider-arrow:active { transform:scale(0.95); }
+      .slider-arrow-left svg { transform:rotate(180deg); }
+
+      /* PRICE */
+      .price-section { background-image:url(https://darishpak.github.io/images/209.png); background-size:550px; background-position:right; background-repeat:no-repeat; height:auto; }
+      .tariffs-container { display:flex; gap:40px; max-width:800px; margin:0 auto; align-items:stretch; }
+      .tariff-plans { flex:1; display:flex; flex-direction:column; gap:16px; }
+      .tariff-row { display:flex; align-items:flex-start; justify-content:space-between; padding:20px 30px; background:linear-gradient(135deg,rgba(255,255,255,0.3),rgba(217,213,204,0.2)); box-shadow:0 2px 8px rgba(0,0,0,0.06); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.35); transition:transform 0.5s ease, box-shadow 0.5s ease; gap:20px; }
+      .tariff-row:hover { transform:scale(1.02); box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+      .tariff-info { flex:1; }
+      .tariff-name { font-size:17px; font-weight:600; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px; }
+      .tariff-desc { font-size:13px; font-weight:400; opacity:0.65; line-height:1.5; letter-spacing:0.5px; }
+      .tariff-size { font-size:28px; font-weight:400; color:var(--text-dark); min-width:30px; white-space:nowrap; }
+
+      /* CONTACTS */
+      .contacts-section { background-image:url(https://darishpak.github.io/images/216.png); background-size:contain; background-position:left bottom; background-repeat:no-repeat; height:auto; }
+      .contacts-container { display:flex; text-align:center; flex-direction:column; gap:24px; }
+
+      /* FORM */
+      .form-section { background-image:url(https://darishpak.github.io/images/301.png); background-size:500px; background-position:left top; background-repeat:no-repeat; height:auto; }
+      .contact-form { display:flex; flex-direction:column; flex-wrap:wrap; gap:16px; max-width:900px; align-items:center; background:linear-gradient(135deg,rgba(255,255,255,0.15),rgba(217,213,204,0.1)); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.2); backdrop-filter:blur(1px); padding:32px 40px; }
+      .form-container { display:flex; justify-content:center; }
+      .form-field { display:flex; flex-direction:column; width:100%; max-width:800px; gap:8px; }
+      .form-field label { align-self:flex-start; margin-left:24px; opacity:0.8; font-weight:400; font-size:16px; }
+      .form-input { width:800px; outline:transparent; color:var(--text-dark); letter-spacing:var(--letter-spacing); background:linear-gradient(135deg,rgba(255,255,255,0.3),rgba(217,213,204,0.2)); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.35); backdrop-filter:blur(1px); padding:20px 30px; box-shadow:0 2px 8px rgba(0,0,0,0.06); box-sizing:border-box; font-family:"Montserrat",sans-serif; font-size:16px; }
+      .service-select { appearance:none; -webkit-appearance:none; cursor:pointer; padding-right:60px; background-image:url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7.5L10 12.5L15 7.5' stroke='%23505050' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 30px center; background-size:20px; }
+      .date-time-wrap { display:flex; gap:24px; }
+      .date-input,.time-input { cursor:pointer; color-scheme:light; width:384px; letter-spacing:var(--letter-spacing); }
+      .form-btn { margin-top:48px; width:100%; }
+
+      /* INSTA */
+      .insta-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:72px; max-width:1200px; margin:0 auto; }
+      .insta-card { aspect-ratio:1; background:linear-gradient(135deg,rgba(255,255,255,0.15),rgba(217,213,204,0.1)); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.2); backdrop-filter:blur(1px); box-shadow:0 2px 8px rgba(0,0,0,0.06); display:flex; align-items:center; justify-content:center; text-decoration:none; transition:all 0.5s ease; overflow:hidden; position:relative; }
+      .insta-card:hover { box-shadow:0 4px 12px rgba(0,0,0,0.1); transform:scale(1.02); }
+      .insta-placeholder { display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+      .insta-icon { width:120px; height:120px; fill:var(--text-dark); opacity:0.7; transition:all 0.5s ease; }
+      .insta-card:hover .insta-icon { opacity:1; transform:scale(1.05); }
+
+      /* FOOTER */
+      .footer { background-image:url(https://darishpak.github.io/images/hero109.png); background-size:contain; background-position:bottom; background-repeat:no-repeat; height:500px; }
+      .footer-container { max-width:1200px; margin:0 auto; padding:0 24px; }
+      .footer-content { display:flex; flex-direction:column; flex-wrap:wrap; }
+      .footer-info { margin-top:56px; flex:1; min-width:240px; margin-bottom:36px; }
+      .footer-title { font-size:24px; font-weight:400; letter-spacing:var(--letter-spacing-heading); text-transform:uppercase; margin-bottom:8px; }
+      .footer-subtitle { line-height:1.5; }
+      .footer-copy { font-size:14px; opacity:0.6; }
+      .footer-credits { display:flex; gap:8px; align-items:center; margin-top:8px; font-size:14px; opacity:0.6; }
+      .dari-link { opacity:1; transition:opacity 0.3s ease; text-decoration:none; color:inherit; }
+      .dari-link:hover { opacity:0.8; }
+
+      /* SCROLL UP */
+      .scroll-up-btn { position:fixed; bottom:40px; right:40px; width:44px; height:44px; border-radius:50%; border:1.5px solid var(--text-dark); background:linear-gradient(135deg,rgba(255,255,255,0.4),rgba(217,213,204,0.3)); backdrop-filter:blur(4px); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s ease; opacity:0; visibility:hidden; padding:0; z-index:1000; }
+      .scroll-up-btn.show { opacity:0.5; visibility:visible; }
+      .scroll-up-btn:hover { opacity:0.8; transform:translateY(-4px); }
+      .scroll-up-btn svg { width:18px; height:18px; stroke:var(--text-dark); stroke-width:2; fill:none; transform:rotate(-90deg); }
+
+      /* REVEAL */
+      .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+      .reveal.visible { opacity:1; transform:none; }
+      .reveal-delay-1 { transition-delay:0.1s; }
+      .reveal-delay-2 { transition-delay:0.2s; }
+      .reveal-delay-3 { transition-delay:0.3s; }
+
+      .cta-section { margin-bottom:96px; }
+      .cta-container { display:flex; justify-content:center; }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <a href="#hero" class="link" style="font-size:18px;text-transform:uppercase;">Сергій Петрик</a>
+        <nav><ul class="nav-list list">
+          <li class="nav-item"><a href="#osteopathy" class="link">Остеопатія</a></li>
+          <li class="nav-item"><a href="#methods" class="link">Методи</a></li>
+          <li class="nav-item"><a href="#about" class="link">Про мене</a></li>
+          <li class="nav-item"><a href="#price" class="link">Ціни</a></li>
+          <li class="nav-item"><a href="#booking" class="link">Записатися</a></li>
+        </ul></nav>
+        <div class="socials">
+          <a class="social-item link" href="https://www.instagram.com/massage_sergey_petrik" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a class="social-item link" href="#" target="_blank"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 5L2 12.5l7 1M21 5l-5 15-4-5.5M21 5L9 13.5m0 0V19l3-3"/></svg></a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-section section" id="hero">
+      <div class="container hero-container">
+        <h1 class="hero-title reveal">Сергій Петрик</h1>
+        <h2 class="hero-subtitle reveal reveal-delay-1">Тіло має власну мову.</h2>
+        <p class="hero-text reveal reveal-delay-2">Допомагаю тілу відпустити біль і напругу<br/>без агресивних методів. Вам буде комфортно.</p>
+        <a href="#booking" class="button reveal reveal-delay-3">Записатись на сеанс</a>
+      </div>
+    </section>
+
+    <section class="philosophy-section section" id="philosophy">
+      <div class="container philosophy-container">
+        <div class="philosophy-left reveal">
+          <h2 class="section-subtitle" style="text-align:left;">Без агресії.<br/>Без поспіху.</h2>
+          <blockquote class="philosophy-quote">«Тіло не потрібно змушувати — йому потрібно допомогти згадати, як бути вільним.»</blockquote>
+        </div>
+        <div class="philosophy-right reveal reveal-delay-1">
+          <p class="philosophy-text">Тіло — не машина, яку можна «відрегулювати» одним різким рухом. Воно — система, яка реагує, адаптується і тримає в собі все, що з вами відбувалось.</p>
+          <p class="philosophy-text">Хронічна напруга, стара травма, постійний стрес — все це залишає слід у тканинах. Завдання терапевта — не «зламати» напругу, а запросити тіло відпустити її самостійно.</p>
+          <p class="philosophy-text">Саме тому в роботі я використовую м'які техніки. Кожен сеанс будується під конкретну людину: поєднання остеопатії, масажу і за потреби сухої голки — залежно від того, що потрібно вашому тілу сьогодні.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-section section" id="help">
+      <div class="container">
+        <h2 class="section-title reveal">З чим я можу допомогти</h2>
+        <ul class="help-list list reveal reveal-delay-1">
+          <li class="help-card"><svg class="help-icon" width="48" height="48" viewBox="0 0 48 48"><path d="M24 8C24 8 14 16 14 26a10 10 0 0020 0C34 16 24 8 24 8z"/></svg><p class="section-subtitle" style="font-size:16px;">Біль у спині</p></li>
+          <li class="help-card"><svg class="help-icon" width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="20" r="12"/><path d="M24 32v8M18 44h12"/></svg><p class="section-subtitle" style="font-size:16px;">Головний біль</p></li>
+          <li class="help-card"><svg class="help-icon" width="48" height="48" viewBox="0 0 48 48"><path d="M12 24h24M24 12v24"/></svg><p class="section-subtitle" style="font-size:16px;">Напруга в шиї</p></li>
+          <li class="help-card"><svg class="help-icon" width="48" height="48" viewBox="0 0 48 48"><path d="M24 10c-8 4-12 10-10 18 2 6 8 10 10 10s8-4 10-10c2-8-2-14-10-18z"/></svg><p class="section-subtitle" style="font-size:16px;">Наслідки стресу</p></li>
+          <li class="help-card"><svg class="help-icon" width="48" height="48" viewBox="0 0 48 48"><path d="M16 36l-4-16 8 8 4-16 4 16 8-8-4 16"/></svg><p class="section-subtitle" style="font-size:16px;">Відновлення після травм</p></li>
+          <li class="help-card"><svg class="help-icon" width="48" height="48" viewBox="0 0 48 48"><path d="M12 38c0-8 4-14 12-14s12 6 12 14"/><circle cx="24" cy="16" r="8"/></svg><p class="section-subtitle" style="font-size:16px;">Відновлення рухливості</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="osteopathy-section section" id="osteopathy">
+      <div class="container">
+        <h2 class="section-title reveal">Що таке остеопатія</h2>
+        <p class="osteopathy-intro reveal reveal-delay-1">Остеопатія — це не масаж і не мануальна терапія. Це діалог з тілом через дотик. Остеопат шукає місця, де тіло втратило свободу руху — і допомагає йому згадати, як рухатись без болю. Дотики в остеопатії м'які і повільні. Саме в цій тиші тіло починає відпускати напругу, яку накопичувало роками.</p>
+        <div class="osteopathy-cards">
+          <div class="osteopathy-card reveal"><p class="osteopathy-card-title">Діалог з тілом</p><p class="osteopathy-card-text">Остеопат не «вправляє» хребет і не «розбиває» м'язи. Він шукає місця, де тіло втратило свободу руху — і допомагає йому згадати, як рухатись без болю. Принцип: мінімум сили, максимум точності і уваги.</p></div>
+          <div class="osteopathy-card reveal reveal-delay-1"><p class="osteopathy-card-title">Тіло як єдина система</p><p class="osteopathy-card-text">Болить коліно — остеопат перевірить таз і стопи. Болить голова — подивиться на шию і щелепу. Остеопатія не лікує симптом. Вона шукає першопричину — навіть якщо вона зовсім в іншому місці.</p></div>
+          <div class="osteopathy-card reveal reveal-delay-2"><p class="osteopathy-card-title">Ніякого хрускоту</p><p class="osteopathy-card-text">Найбільший міф: «остеопат — значить буде хрускіт». Остеопатія принципово відрізняється від мануальної терапії. Тут немає різких маніпуляцій — є терпіння, увага і тонка робота з тканинами.</p></div>
+          <div class="osteopathy-card reveal reveal-delay-3"><p class="osteopathy-card-title">Ефект накопичується</p><p class="osteopathy-card-text">Після першого сеансу тіло продовжує «перебудовуватись» ще кілька днів — це нормально. Іноді відчувається легка втома або нові відчуття в тілі. Це знак, що процес пішов.</p></div>
+        </div>
+        <div class="compare-wrap reveal">
+          <p class="compare-title">Остеопатія vs Мануальна терапія</p>
+          <table class="compare-table">
+            <thead><tr><th></th><th>Остеопатія</th><th>Мануальна терапія</th></tr></thead>
+            <tbody>
+              <tr><td>Метод</td><td>М'який, повільний, без різких рухів</td><td>Часто різкий, з маніпуляціями й хрускотом</td></tr>
+              <tr><td>Ціль</td><td>Відновити свободу руху всієї системи</td><td>Вправити конкретний суглоб або хребець</td></tr>
+              <tr><td>Відчуття</td><td>Розслаблення, тепло, відчуття «відпускання»</td><td>Може бути дискомфорт, іноді болісно</td></tr>
+              <tr><td>Підхід</td><td>Тіло — єдина система зв'язків</td><td>Локальна ділянка, конкретна проблема</td></tr>
+              <tr><td>Після сеансу</td><td>Поступова перебудова протягом кількох днів</td><td>Ефект помітний одразу, але короткочасний</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="body-remembers-section section" id="body-remembers">
+      <div class="container body-remembers-container">
+        <div class="body-remembers-left reveal">
+          <h2 class="section-subtitle" style="text-align:left;">Тіло пам'ятає</h2>
+          <p class="body-remembers-intro">Кожна травма, кожен стрес, кожна незручна поза за комп'ютером — тіло це записує. Не в голові, а в тканинах: у фасціях, м'язах, зв'язках.</p>
+          <p class="body-remembers-intro">Хронічний біль часто — не там, де болить. Напруга в попереку може тягнутися від стоп. Головний біль — від щелепи або шиї. Тіло компенсує, адаптується, тримає — аж доки не може більше.</p>
+          <p class="body-remembers-intro">Завдання остеопата — знайти першопричину, а не просто зняти симптом.</p>
+        </div>
+        <div class="body-remembers-right reveal reveal-delay-1">
+          <ul class="body-points list">
+            <li class="body-point"><span class="body-point-num">01</span><div class="body-point-content"><h4>Фасції — павутиння напруги</h4><p>Фасція оточує кожен м'яз, орган і кістку. Коли вона скорочується — ланцюжок напруги тягнеться через все тіло.</p></div></li>
+            <li class="body-point"><span class="body-point-num">02</span><div class="body-point-content"><h4>Тригерні точки</h4><p>Маленькі вузлики в м'язах — місця хронічного спазму. Вони «посилають» біль у зовсім інше місце.</p></div></li>
+            <li class="body-point"><span class="body-point-num">03</span><div class="body-point-content"><h4>Стрес живе в тілі</h4><p>Хронічний стрес підвищує м'язовий тонус у всьому тілі. М'які техніки допомагають нервовій системі вийти зі стану постійної готовності.</p></div></li>
+            <li class="body-point"><span class="body-point-num">04</span><div class="body-point-content"><h4>Компенсації накопичуються</h4><p>Давня травма стопи змінює хід — перевантажує коліно — скошує таз — болить попереку. Завдання остеопата — розплутати цей ланцюжок.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="methods-section section" id="methods">
+      <div class="container">
+        <h2 class="section-title reveal">Методи роботи</h2>
+        <p class="osteopathy-intro reveal reveal-delay-1" style="margin-bottom:64px;">Кожен сеанс — унікальний. Я обираю і комбіную техніки під ваш запит і стан тіла саме сьогодні.</p>
+        <div class="methods-grid">
+          <div class="method-card reveal"><span class="method-icon">🖐</span><span class="method-tag">Основа</span><p class="method-title">Остеопатичні техніки</p><p class="method-text">М'яка робота з фасціями, суглобами, краніосакральною системою. Тіло не змушують — йому пропонують напрямок. Мінімум сили, максимум точності і уваги.</p></div>
+          <div class="method-card reveal reveal-delay-1"><span class="method-icon">💆</span><span class="method-tag">Додатково</span><p class="method-title">Масаж під запит</p><p class="method-text">Класичний, спортивний, тригерний, міофасціальний — залежно від того, що потрібно тілу саме сьогодні. Вибір техніки під конкретну задачу і стан.</p></div>
+          <div class="method-card reveal reveal-delay-2"><span class="method-icon">🪡</span><span class="method-tag">Для глибоких спазмів</span><p class="method-title">Суха голка (Dry needling)</p><p class="method-text">Тонкі голки вводяться в тригерні точки — місця хронічного м'язового спазму. Знімає глибоку напругу там, де руки не завжди дістають. Не акупунктура: це нейром'язова техніка з доказовою базою.</p></div>
+          <div class="method-card reveal reveal-delay-3"><span class="method-icon">🎗</span><span class="method-tag">Між сеансами</span><p class="method-title">Кінезіотейпування</p><p class="method-text">Еластичний тейп підтримує м'язи і суглоби між сесіями — продовжує ефект роботи, зменшує набряк і нагадує тілу про правильну позицію ще кілька днів.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section section" id="how">
+      <div class="container how-container">
+        <div>
+          <h2 class="section-title reveal" style="text-align:left;">Як проходить сеанс</h2>
+          <ul class="how-list list">
+            <li class="how-item reveal"><span class="how-number">01</span><div class="how-item-content"><h4>Розмова і запит</h4><p>Починаємо з діалогу. Уважно слухаю ваш запит: що болить, коли почалось, як змінюється. Ваша розповідь — перша частина діагностики.</p></div></li>
+            <li class="how-item reveal reveal-delay-1"><span class="how-number">02</span><div class="how-item-content"><h4>Діагностика руками</h4><p>Оцінюю рухливість, тонус м'язів, стан фасцій. Шукаю не лише там, де болить — а де знаходиться першопричина.</p></div></li>
+            <li class="how-item reveal reveal-delay-2"><span class="how-number">03</span><div class="how-item-content"><h4>М'яка робота з тілом</h4><p>Підбираю техніки під ваш запит: остеопатія, масаж, суха голка або їх поєднання. Ви регулюєте комфорт — боляче не має бути.</p></div></li>
+            <li class="how-item reveal reveal-delay-3"><span class="how-number">04</span><div class="how-item-content"><h4>Рекомендації після</h4><p>Що робити між сеансами, які рухи підтримають результат, скільки сеансів може знадобитись. Ефект продовжується ще кілька днів.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-container">
+        <div class="img-wrap" style="max-width:420px;flex-shrink:0;">
+          <img src="https://darishpak.github.io/images/me.jpg" alt="Фото Сергія Петрика" loading="lazy" />
+        </div>
+        <div class="about-text reveal reveal-delay-1">
+          <h2 class="section-subtitle" style="text-align:left;">Про мене</h2>
+          <p>Я — спортсмен, кандидат у майстри спорту з рукопашного бою. Добре знаю, що таке біль, травми та відновлення — і з власного досвіду, і з багаторічної практики.</p>
+          <p>Саме спорт навчив мене розуміти тіло глибше: як воно реагує на навантаження, де накопичується напруга і чому біль не з'являється випадково.</p>
+          <p>Коли я знайшов остеопатію — відчув, що це моє. Тіло здатне відновлюватись само, якщо йому не заважати і трохи допомогти.</p>
+          <p>У роботі я поєдную це розуміння з м'яким підходом. Кожен сеанс будується індивідуально — адже кожне тіло має свою історію і свій темп відновлення.</p>
+          <div class="about-stats reveal">
+            <div class="stat-item"><span class="stat-num">8+</span><span class="stat-label">років практики</span></div>
+            <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">клієнтів</span></div>
+            <div class="stat-item"><span class="stat-num">4</span><span class="stat-label">методи в роботі</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="osteopath-section section" id="osteopath">
+      <div class="container osteopath-container">
+        <div><h2 class="section-subtitle reveal">Як зрозуміти,<br/>що вам потрібен остеопат</h2></div>
+        <ul class="osteo-list list">
+          <li class="osteo-item reveal"><div class="osteo-header"><h3 class="section-subtitle osteo-title" style="font-size:17px;margin:0;">Хронічний біль у спині, шиї або суглобах</h3><div class="osteo-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="osteo-content"><p>Який не зникає після відпочинку і повертається знову й знову. Остеопат знаходить першопричину болю та працює з нею, а не лише з симптомом. Часто причина болю в спині — зовсім не в спині.</p></div></li>
+          <li class="osteo-item reveal reveal-delay-1"><div class="osteo-header"><h3 class="section-subtitle osteo-title" style="font-size:17px;margin:0;">Часті головні болі та мігрені</h3><div class="osteo-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="osteo-content"><p>Особливо якщо пов'язані з напругою в шийному відділі або щелепі. М'які техніки знімають напругу та покращують кровообіг без таблеток.</p></div></li>
+          <li class="osteo-item reveal reveal-delay-2"><div class="osteo-header"><h3 class="section-subtitle osteo-title" style="font-size:17px;margin:0;">Скутість і обмеження рухливості</h3><div class="osteo-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="osteo-content"><p>Коли звичні рухи даються з дискомфортом. Остеопатія відновлює природну амплітуду рухів і свободу в тілі без болю і різких маніпуляцій.</p></div></li>
+          <li class="osteo-item reveal"><div class="osteo-header"><h3 class="section-subtitle osteo-title" style="font-size:17px;margin:0;">Порушення постави</h3><div class="osteo-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="osteo-content"><p>Сутулість, асиметрія плечей, перекос тазу. Робота з м'язами та фасціями допомагає відновити баланс тіла без корсетів і примусових вправ.</p></div></li>
+          <li class="osteo-item reveal reveal-delay-1"><div class="osteo-header"><h3 class="section-subtitle osteo-title" style="font-size:17px;margin:0;">Проблеми зі сном і хронічна втома</h3><div class="osteo-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="osteo-content"><p>Коли організм не відновлюється навіть після повноцінного відпочинку. Остеопатія запускає природні механізми самовідновлення через нервову систему.</p></div></li>
+          <li class="osteo-item reveal reveal-delay-2"><div class="osteo-header"><h3 class="section-subtitle osteo-title" style="font-size:17px;margin:0;">Відновлення після травм або операцій</h3><div class="osteo-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="osteo-content"><p>Коли потрібно повернути тілу рухливість і баланс без медикаментів та болю. Особливо ефективно після спортивних травм.</p></div></li>
+          <li class="osteo-item reveal"><div class="osteo-header"><h3 class="section-subtitle osteo-title" style="font-size:17px;margin:0;">Стрес і м'язова напруга</h3><div class="osteo-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="osteo-content"><p>Тіло накопичує психоемоційну напругу. М'які техніки допомагають нервовій системі вийти зі стану «бойової готовності» — і тіло нарешті розслабляється.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="faq-section section" id="faq">
+      <div class="container">
+        <h2 class="section-title reveal">Питання перед першим сеансом</h2>
+        <ul class="faq-list list">
+          <li class="faq-item reveal"><div class="faq-header"><p class="faq-q">Це боляче?</p><div class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="faq-content"><p>Ні. Робота м'яка, ви самі регулюєте рівень комфорту. Може бути відчуття тепла, легкого тиску або «відпускання» — але не болю. Якщо щось дискомфортно — одразу кажіть.</p></div></li>
+          <li class="faq-item reveal reveal-delay-1"><div class="faq-header"><p class="faq-q">Скільки сеансів потрібно?</p><div class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="faq-content"><p>Залежить від запиту. Гостра проблема — іноді 1–2 сеансів. Хронічний стан, якому роки — курс 4–6 сеансів. Обговоримо після першого візиту.</p></div></li>
+          <li class="faq-item reveal reveal-delay-2"><div class="faq-header"><p class="faq-q">Що таке суха голка? Це страшно?</p><div class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="faq-content"><p>Голки тонші за акупунктурні, вводяться в конкретні точки м'язового спазму. Більшість людей відчуває лише легке поколювання або тепло. Це нейром'язова техніка з доказовою базою, не акупунктура.</p></div></li>
+          <li class="faq-item reveal"><div class="faq-header"><p class="faq-q">Що буде після сеансу?</p><div class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="faq-content"><p>Часто — відчуття легкості й тепла. Іноді наступного дня легка втома або нові відчуття в тілі: тіло продовжує перебудовуватись. За 1–2 дні проходить, залишається лише полегшення.</p></div></li>
+          <li class="faq-item reveal reveal-delay-1"><div class="faq-header"><p class="faq-q">Чим відрізняється від масажу?</p><div class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="faq-content"><p>Масаж працює з м'язами і розслабленням. Остеопатія — з усією системою: суглобами, фасціями, нервовою системою. Шукає причину, а не лише знімає симптом.</p></div></li>
+          <li class="faq-item reveal reveal-delay-2"><div class="faq-header"><p class="faq-q">Чи є протипоказання?</p><div class="faq-arrow"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></div></div><div class="faq-content"><p>Є окремі стани: онкологія, гострі запальні процеси, переломи в стадії загоєння. Якщо є сумніви — напишіть заздалегідь, розберемося разом.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container"><h2 class="section-title reveal">Відгуки про мою роботу</h2></div>
+      <div class="testimonials-container reveal">
+        <button class="slider-arrow slider-arrow-left" id="prevBtn"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+        <div class="testimonials-slider">
+          <ul class="testimonials-list list" id="testimonialsList">
+            <li class="testimonials-item">Сергій — майстер своєї справи. Творить дива. Рекомендую!</li>
+            <li class="testimonials-item">Дуже вдячна і задоволена лікуванням стопи. Погляд — рентген, дотик — цілющий. Кращий ефект, ніж у апаратних методик.</li>
+            <li class="testimonials-item">Майстер своєї справи. Велике дякую за допомогу бути здоровою!</li>
+            <li class="testimonials-item">Антицелюлітний масаж — це 🔥 Об'єми зменшились, тіло підтягнулось, а головне — отримала задоволення від сеансів! Ви найкращий!</li>
+            <li class="testimonials-item">Велике спасибі за масаж — я стала новою людиною: випрямилась спина, покращилось дихання, захотілося правильно харчуватися 🙌</li>
+            <li class="testimonials-item">За свою спину і шию — велике дякую. Після кожного масажу спина випрямляється, всі затиски знімаються, настрій піднімається, з'являється відчуття легкості.</li>
+          </ul>
+        </div>
+        <button class="slider-arrow slider-arrow-right" id="nextBtn"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </section>
+
+    <section class="cta-section"><div class="container cta-container"><a href="#booking" class="button reveal">Записатись на масаж</a></div></section>
+
+    <section class="price-section section" id="price">
+      <div class="container">
+        <h2 class="section-title reveal">Ціни</h2>
+        <div class="tariffs-container">
+          <div class="tariff-plans">
+            <div class="tariff-row reveal"><div class="tariff-info"><p class="tariff-name">Остеопатична сесія</p><p class="tariff-desc">Індивідуальний підбір технік, повна діагностика, робота з першопричиною болю</p></div><div class="tariff-size">5 000 <span style="font-size:16px;">грн</span></div></div>
+            <div class="tariff-row reveal reveal-delay-1"><div class="tariff-info"><p class="tariff-name">Відновлювальний масаж</p><p class="tariff-desc">М'який або глибокий масаж під запит — для розслаблення або відновлення</p></div><div class="tariff-size">5 000 <span style="font-size:16px;">грн</span></div></div>
+            <div class="tariff-row reveal reveal-delay-2"><div class="tariff-info"><p class="tariff-name">Чоловічий масаж</p><p class="tariff-desc">Глибока робота з м'язовим корсетом, зняття накопиченої напруги</p></div><div class="tariff-size">5 000 <span style="font-size:16px;">грн</span></div></div>
+            <div class="tariff-row reveal"><div class="tariff-info"><p class="tariff-name">Лімфодренажний масаж</p><p class="tariff-desc">Покращення лімфовідтоку, зменшення набряклості, загальне оздоровлення</p></div><div class="tariff-size">5 000 <span style="font-size:16px;">грн</span></div></div>
+            <div class="tariff-row reveal reveal-delay-1"><div class="tariff-info"><p class="tariff-name">Тейпування</p><p class="tariff-desc">Кінезіотейп для підтримки між сеансами: м'язи, суглоби, зменшення набряку</p></div><div class="tariff-size">5 000 <span style="font-size:16px;">грн</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts-section section" id="contacts">
+      <div class="container contacts-container">
+        <h2 class="section-title reveal">Контакти</h2>
+        <address class="reveal reveal-delay-1"><a class="link" href="https://maps.app.goo.gl/oBPGf2ZV2MYxQRwS6" target="_blank">вул. Митрополита Андрія Шептицького 4-А, ТРЦ "КОМОД"</a></address>
+        <p class="reveal reveal-delay-2">Метро "Лівобережна"</p>
+        <p class="reveal reveal-delay-3">Пн - Пт з 10.00 до 19.00</p>
+        <div class="socials reveal" style="justify-content:center;margin-top:16px;">
+          <a class="social-item link" href="https://www.instagram.com/massage_sergey_petrik" target="_blank">Instagram</a>
+          <a class="social-item link" href="#" target="_blank">Telegram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-section section" id="booking">
+      <div class="container form-container">
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+          <h2 class="section-subtitle" style="text-align:center;">Записатися на масаж або задати питання</h2>
+          <div class="date-time-wrap">
+            <div class="form-field"><label for="date">Оберіть зручну дату</label><input class="form-input date-input" type="date" id="date" name="date" /></div>
+            <div class="form-field"><label for="time">Оберіть бажаний час</label><input class="form-input time-input" type="time" id="time" name="time" /></div>
+          </div>
+          <div class="form-field">
+            <label for="service">Оберіть послугу</label>
+            <select class="form-input service-select" id="service" name="service">
+              <option value="" disabled selected>Оберіть послугу</option>
+              <option value="osteo">Остеопатичний сеанс</option>
+              <option value="classic">Класичний масаж</option>
+              <option value="sport">Відновлювальний масаж</option>
+              <option value="lymph">Лімфодренажний масаж</option>
+              <option value="tape">Тейпування</option>
+            </select>
+          </div>
+          <button class="button form-btn" type="submit">Надіслати</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="insta">
+      <div class="container">
+        <h2 class="section-title reveal">Мій Instagram</h2>
+        <div class="insta-grid">
+          <a class="insta-card" href="https://www.instagram.com/massage_sergey_petrik" target="_blank"><div class="insta-placeholder"><svg class="insta-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div></a>
+          <a class="insta-card" href="https://www.instagram.com/massage_sergey_petrik" target="_blank"><div class="insta-placeholder"><svg class="insta-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div></a>
+          <a class="insta-card" href="https://www.instagram.com/massage_sergey_petrik" target="_blank"><div class="insta-placeholder"><svg class="insta-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div></a>
+          <a class="insta-card" href="https://www.instagram.com/massage_sergey_petrik" target="_blank"><div class="insta-placeholder"><svg class="insta-icon" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div></a>
+        </div>
+        <h3 class="section-subtitle" style="text-align:center;margin-top:72px;font-size:18px;">Сергій Петрик</h3>
+        <p style="text-align:center;opacity:0.6;margin-top:8px;">Професійний масажист</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <h2 class="footer-title">Сергій Петрик</h2>
+            <p class="footer-subtitle"><a class="link" href="https://maps.app.goo.gl/oBPGf2ZV2MYxQRwS6" target="_blank">вул. Митрополита Андрія Шептицького 4-А, ТРЦ "КОМОД"</a><br/>Метро "Лівобережна"<br/>Пн - Пт з 10.00 до 19.00</p>
+          </div>
+          <p class="footer-copy">Всі права захищені © 2026 Сергій Петрик</p>
+          <div class="footer-credits">Розроблено з ♡ <a class="dari-link" href="mailto:dari.shpak.codes@gmail.com">Dari Shpak</a></div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-up-btn" id="scrollUpBtn">
+      <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+
+    <script>
+      document.querySelectorAll('.osteo-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.osteo-item').forEach(i => i.classList.remove('active'));
+          if (!isActive) item.classList.add('active');
+        });
+      });
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+          if (!isActive) item.classList.add('active');
+        });
+      });
+      let currentSlide = 0;
+      const list = document.getElementById('testimonialsList');
+      const items = list.querySelectorAll('.testimonials-item');
+      const total = items.length;
+      function goTo(index) {
+        if (index < 0) index = total - 1;
+        if (index >= total) index = 0;
+        currentSlide = index;
+        list.style.transform = 'translateX(-' + (currentSlide * 800) + 'px)';
+      }
+      document.getElementById('nextBtn').addEventListener('click', () => goTo(currentSlide + 1));
+      document.getElementById('prevBtn').addEventListener('click', () => goTo(currentSlide - 1));
+      setInterval(() => goTo(currentSlide + 1), 5000);
+      const scrollBtn = document.getElementById('scrollUpBtn');
+      window.addEventListener('scroll', () => { scrollBtn.classList.toggle('show', window.scrollY > 400); });
+      scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector('.form-btn');
+        btn.textContent = 'Відправлено ✓';
+        btn.style.opacity = '0.7';
+        btn.disabled = true;
+      }
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      reveals.forEach(el => observer.observe(el));
+      document.querySelectorAll('#hero .reveal').forEach((el, i) => { setTimeout(() => el.classList.add('visible'), i * 150 + 300); });
+    </script>
+  </body>
+</html>
