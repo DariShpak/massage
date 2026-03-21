@@ -1,6 +1,10 @@
 :root {
-  --bg-color: #d2d0c3;
-  --accent-color: #bbb4a3;
+  /* --bg-color: #d2d0c3; */
+  --bg-color: #ede8e0;
+  --text-color: #505050;
+  --accent-color: #b5896b;
+
+  /* --accent-color: #bbb4a3; */
   --card-color: #c8c4b5;
   --text-color: #ffffff;
   --text-dark: #505050;
@@ -157,10 +161,10 @@ address {
 
 .button {
   cursor: pointer;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
   border-radius: var(--border-radius);
   color: inherit;
   font-family: inherit;
@@ -169,12 +173,8 @@ address {
   letter-spacing: 2;
   border: 1px solid rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(4px);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.35),
-    rgba(217, 213, 204, 0.25)
-  );
-  backdrop-filter: blur(1px);
+  background: var(--box-shadow);
+
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   transition: 0.5s ease;
   text-align: center;
@@ -246,7 +246,7 @@ address {
   background-position: center;
   background-repeat: no-repeat;
 
-  height: 800px;
+  height: 1000px;
 }
 
 .hero-container {
@@ -272,6 +272,45 @@ address {
   font-size: 22px;
   margin-bottom: 72px;
   font-weight: 400;
+}
+
+.buttons-wrap {
+  display: flex;
+  gap: 24px;
+}
+
+/* philosophy */
+
+.philosophy-container {
+  display: flex;
+  gap: 48px;
+}
+
+.philosophy-left {
+  display: flex;
+  flex-direction: column;
+  min-width: 380px;
+}
+
+.philosophy-quote {
+  padding: 28px 36px;
+  border-left: 3px solid rgba(80, 80, 80, 0.25);
+  margin-top: 32px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  opacity: 0.85;
+
+  min-width: 240px;
+}
+
+.philosophy-text {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  opacity: 0.85;
 }
 
 /* help */
