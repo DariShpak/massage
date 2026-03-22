@@ -647,6 +647,7 @@ address {
 /* about */
 
 .about-container {
+  margin-top: 96px;
   display: flex;
   justify-content: space-around;
 }
@@ -657,6 +658,23 @@ address {
   max-width: 760px;
   text-align: justify;
 }
+
+  /* FAQ */
+      .faq-section { background-image:url(https://darishpak.github.io/images/216.png); background-size:contain; background-position:right bottom; background-repeat:no-repeat; }
+      .faq-list { max-width:760px; display:flex; flex-direction:column; gap:16px; margin:0 auto; }
+      .faq-item { display:flex; flex-direction:column; padding:20px 30px; background:linear-gradient(135deg,rgba(255,255,255,0.3),rgba(217,213,204,0.2)); border-radius:var(--border-radius); border:1px solid rgba(255,255,255,0.35); backdrop-filter:blur(1px); box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.3s ease; cursor:pointer; }
+      .faq-item:hover { box-shadow:0 4px 12px rgba(0,0,0,0.1); transform:scale(1.02); }
+      .faq-header { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+      .faq-q { font-size:17px; font-weight:500; letter-spacing:1px; flex:1; margin:0; }
+      .faq-arrow { width:36px; height:36px; border-radius:50%; border:1.5px solid var(--text-dark); display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; opacity:0.6; flex-shrink:0; }
+      .faq-arrow svg { width:18px; height:18px; stroke:var(--text-dark); stroke-width:2; fill:none; transform:rotate(90deg); transition:all 0.3s ease; }
+      .faq-item:hover .faq-arrow { opacity:1; }
+      .faq-content { overflow:hidden; transition:all 0.4s ease; opacity:0; max-height:0; }
+      .faq-content p { margin:0; font-size:16px; padding-top:12px; font-weight:400; line-height:1.65; opacity:0.85; }
+      .faq-item.active .faq-content { opacity:1; max-height:300px; }
+      .faq-item.active .faq-arrow { opacity:1; }
+      .faq-item.active .faq-arrow svg { transform:rotate(-90deg); }
+
 
 /* price */
 
@@ -713,6 +731,11 @@ address {
   color: var(--text-dark);
   min-width: 30px;
 }
+
+  /* CONTACTS */
+      .contacts-section { background-image:url(https://darishpak.github.io/images/216.png); background-size:contain; background-position:left bottom; background-repeat:no-repeat; height:auto; }
+      .contacts-container { display:flex; text-align:center; flex-direction:column; gap:24px; }
+
 
 /* osteopath */
 .osteopath-section {
@@ -913,7 +936,7 @@ address {
 }
 
 /* contacts */
-.contacts-section {
+/* .contacts-section {
   background-image: url(../images/216.png);
   background-size: contain;
   background-position: left bottom;
@@ -926,7 +949,7 @@ address {
   text-align: center;
   flex-direction: column;
   gap: 24px;
-}
+}  */
 
 /* FORM */
 
