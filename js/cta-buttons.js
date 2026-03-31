@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  let hasAnimatedOnce = false; // Щоб анімувати тільки один раз при появі
+
   // Показувати/ховати floating кнопку при прокрутці
   const toggleFloatingCta = () => {
     if (window.scrollY > 500) {
@@ -16,26 +18,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Підсвічування форми при переході по якірному посиланню
+  // Підсвічування форми
   const highlightForm = () => {
+    if (formContainer) {
+      formContainer.classList.add('highlight');
+
+      // Видаляємо клас після завершення анімації (1.2s × 2 = 2.4s)
+      setTimeout(() => {
+        formContainer.classList.remove('highlight');
+      }, 2500);
+    }
+  };
+
+  // Підсвічування форми при переході по якірному посиланню
+  const highlightFormWithDelay = () => {
     if (formContainer) {
       // Чекаємо поки доскролить до форми
       setTimeout(() => {
-        formContainer.classList.add('highlight');
-
-        // Видаляємо клас після завершення анімації
-        setTimeout(() => {
-          formContainer.classList.remove('highlight');
-        }, 1500);
+        highlightForm();
       }, 800);
     }
   };
+
+  // Intersection Observer для автоматичного підсвічування при з'явленні в полі зору
+  if (formContainer) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasAnimatedOnce) {
+          highlightForm();
+          hasAnimatedOnce = true;
+        }
+      });
+    }, {
+      threshold: 0.3 // Запустити коли 30% форми видно
+    });
+
+    observer.observe(formContainer);
+  }
 
   // Слухачі подій
   window.addEventListener('scroll', toggleFloatingCta);
 
   ctaButtons.forEach(button => {
-    button.addEventListener('click', highlightForm);
+    button.addEventListener('click', highlightFormWithDelay);
   });
 
   // Перевірка при завантаженні сторінки
