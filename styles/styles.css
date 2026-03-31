@@ -63,6 +63,7 @@ img {
 .img-wrap {
   width: clamp(320px, 50vw, 520px);
   flex-shrink: 0;
+  margin-inline: auto;
 }
 
 a,
@@ -116,7 +117,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 180px;
+  min-width: 220px;
 
   background-color: var(--glass);
   border: var(--glass-border);
@@ -502,7 +503,7 @@ button {
 
 .help-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: clamp(2rem, 4vw, 3rem);
 
   margin-top: 6rem;
@@ -979,12 +980,32 @@ address {
 /* footer */
 .footer {
   padding-top: 8rem;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 
   background-image: url(../img/photos/bg-img/footer.webp);
   background-size: contain;
-  background-position: top left;
+  background-position: 60% 40%;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding-bottom: 6rem;
+    background-position: 60% 35%;
+  }
+}
+
+
+@media (min-width: 1240px) {
+  .footer {
+    background-position: 60% 20%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    background-position: 60% 15%;
+  }
 }
 
 .footer-content {
@@ -997,6 +1018,7 @@ address {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+  max-width: 360px;
 }
 
 .footer-bottom {
@@ -1022,7 +1044,8 @@ address {
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   10% {
@@ -1104,7 +1127,7 @@ address {
 
 .cta-button {
   min-width: 220px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 /* floating CTA */
@@ -1156,7 +1179,9 @@ address {
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in.visible {
@@ -1167,7 +1192,9 @@ address {
 .fade-in-left {
   opacity: 0;
   transform: translateX(-35px);
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in-left.visible {
@@ -1178,7 +1205,9 @@ address {
 .fade-in-right {
   opacity: 0;
   transform: translateX(35px);
-  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fade-in-right.visible {
