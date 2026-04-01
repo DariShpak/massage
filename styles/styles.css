@@ -109,6 +109,7 @@ button {
 
 .container {
   width: 100%;
+  max-width: 1400px;
   padding-inline: clamp(1rem, 8vw, 5rem);
   margin-inline: auto;
 }
