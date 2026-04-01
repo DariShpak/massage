@@ -59,9 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Слухачі подій
   window.addEventListener('scroll', toggleFloatingCta);
 
-  ctaButtons.forEach(button => {
-    button.addEventListener('click', highlightFormWithDelay);
-  });
+  // Обробка кліків тепер в smooth-scroll.js щоб уникнути конфліктів
+  // ctaButtons.forEach(button => {
+  //   button.addEventListener('click', highlightFormWithDelay);
+  // });
 
   // Перевірка при завантаженні сторінки
   toggleFloatingCta();

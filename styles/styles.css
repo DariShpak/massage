@@ -23,7 +23,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
 }
 
 html,
@@ -1274,10 +1273,15 @@ address {
   transform: translateY(0);
 }
 
-/* Під час скролу до якоря - показуємо все одразу без анімацій */
-.is-scrolling-to-anchor .fade-in {
+/* Під час скролу до якоря - вимикаємо анімації для елементів що проїжджаємо */
+.is-scrolling-to-anchor .fade-in:not(.target-section .fade-in) {
   opacity: 1;
   transform: translateY(0);
   transition: none;
+}
+
+/* Для цільової секції - залишаємо нормальну анімацію */
+.target-section .fade-in {
+  transition-duration: 1s;
 }
 
