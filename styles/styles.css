@@ -425,7 +425,7 @@ button {
   border-bottom-left-radius: 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .philosophy-content-wrap {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -616,7 +616,7 @@ button {
     var(--box-shadow);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .how-content {
     grid-template-columns: 1fr;
     gap: 2rem;
