@@ -1,28 +1,33 @@
 // Page Loader
 const loader = document.querySelector('.page-loader');
-if (!loader) return;
 
-// Перевіряємо чи лоадер вже був показаний в цій сесії
-const hasSeenLoader = sessionStorage.getItem('loaderShown');
+if (loader) {
+  let loaderHidden = false;
 
-if (hasSeenLoader) {
-  // Якщо вже бачили лоадер в цій сесії - одразу видаляємо
-  loader.remove();
-} else {
-  // Перший раз - показуємо лоадер і чекаємо повного завантаження
-  window.addEventListener('load', () => {
-    // Позначаємо що лоадер було показано
-    sessionStorage.setItem('loaderShown', 'true');
+  function hideLoader() {
+    if (loaderHidden) return;
+    loaderHidden = true;
 
-    // Додаємо невеликий мінімальний час показу лоадера (500ms)
-    // щоб він не мигав занадто швидко
+    loader.classList.add('hidden');
     setTimeout(() => {
-      loader.classList.add('hidden');
-
-      // Видаляємо лоадер з DOM після завершення анімації
-      setTimeout(() => {
-        loader.remove();
-      }, 500);
+      loader.remove();
     }, 500);
+  }
+
+  // Якщо є якір в URL (#methods, #contacts тощо) - ховаємо швидше
+  const hasHash = window.location.hash;
+  const maxWaitTime = hasHash ? 1500 : 3000;
+
+  // Ховаємо лоадер після завантаження
+  window.addEventListener('load', () => {
+    setTimeout(hideLoader, 500);
   });
+
+  // Fallback: ховаємо через максимальний час в будь-якому випадку
+  setTimeout(hideLoader, maxWaitTime);
+
+  // Додатковий fallback: як тільки DOM готовий і є якір - ховаємо
+  if (hasHash && document.readyState === 'interactive') {
+    setTimeout(hideLoader, 800);
+  }
 }
