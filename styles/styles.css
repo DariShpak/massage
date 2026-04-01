@@ -23,10 +23,6 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-html,
-body {
   overflow-x: hidden;
 }
 
@@ -36,6 +32,13 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  overflow-x: hidden;
+}
+
+.site-wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 h1,
@@ -362,7 +365,7 @@ button {
   background-size: cover;
   background-position: bottom;
 
-  min-height: 870px;
+  min-height: 900px;
 }
 
 .hero-container {
@@ -1207,8 +1210,10 @@ address {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
