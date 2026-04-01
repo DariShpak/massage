@@ -39,8 +39,10 @@ function setupSmoothScroll() {
         block: scrollPosition
       });
 
-      // Оновлюємо URL
-      history.pushState(null, null, href);
+      // Оновлюємо URL (тільки якщо не локальний file://)
+      if (window.location.protocol !== 'file:') {
+        history.pushState(null, null, href);
+      }
 
       // Якщо це посилання на контакти - підсвічуємо форму
       if (href === '#contacts') {
