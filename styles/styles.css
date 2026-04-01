@@ -895,6 +895,20 @@ address {
   transform: translateY(-2px);
 }
 
+.date-time-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 .date-input,
 .time-input {
   width: 100%;
