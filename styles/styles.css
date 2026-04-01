@@ -1274,3 +1274,10 @@ address {
   transform: translateY(0);
 }
 
+/* Під час скролу до якоря - показуємо все одразу без анімацій */
+.is-scrolling-to-anchor .fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: none;
+}
+
