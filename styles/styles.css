@@ -1459,6 +1459,9 @@ behold-widget {
     min-width: 540px;
     flex-shrink: 0;
   }
+  .about-left {
+   min-width: 420px;
+  }
 
   .faq-section {
     background-size: 800px;
