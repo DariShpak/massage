@@ -1315,6 +1315,10 @@ behold-widget {
 }
 
 @media (min-width: 1024px) {
+  .hero-section {
+    min-height: 800px;
+  }
+
   .philosophy-content-wrap {
     flex-direction: row;
 
@@ -1364,7 +1368,7 @@ behold-widget {
   }
 
   .how-img-wrap {
-    max-width: 380px;
+    max-width: 320px;
   }
 
   .about-content-wrap {
@@ -1374,7 +1378,7 @@ behold-widget {
   }
 
   .about-left {
-    min-width: 380px;
+   min-width: 380px;
   }
 
   .about-right .section-subtitle {
