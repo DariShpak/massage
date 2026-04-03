@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -994,18 +994,15 @@
     <script src="./js/cta-buttons.js" type="module"></script>
     <script src="./js/scroll-animations.js" type="module"></script>
 
-    <!-- Behold Instagram Widget - відкладене завантаження -->
+    <!-- Behold Instagram Widget -->
     <script>
-      // Завантажуємо Instagram widget тільки після повного завантаження сторінки
-      window.addEventListener('load', () => {
-        setTimeout(() => {
-          const d = document,
-            s = d.createElement("script")
-          s.type = "module"
-          s.src = "https://w.behold.so/widget.js"
-          d.head.append(s)
-        }, 1000) // Чекаємо ще 1 секунду після load
-      })
+      ;(() => {
+        const d = document,
+          s = d.createElement("script")
+        s.type = "module"
+        s.src = "https://w.behold.so/widget.js"
+        d.head.append(s)
+      })()
     </script>
   </body>
 </html>
