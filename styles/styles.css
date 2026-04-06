@@ -631,7 +631,7 @@ body:has(.mobile-menu.is-open) {
   background-position: bottom left;
   background-repeat: no-repeat;
 
-  height: 1140px;
+  height: 1380px;
 }
 
 .faq-list {
@@ -1292,6 +1292,7 @@ behold-widget {
 
   .faq-section {
     background-size: 400px;
+    height: 1180px;
   }
 
   .floating-cta {
@@ -1386,7 +1387,7 @@ behold-widget {
   }
 
   .about-left {
-   min-width: 380px;
+    min-width: 380px;
   }
 
   .about-right .section-subtitle {
@@ -1468,7 +1469,7 @@ behold-widget {
     flex-shrink: 0;
   }
   .about-left {
-   min-width: 420px;
+    min-width: 420px;
   }
 
   .faq-section {
