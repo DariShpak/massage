@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сторінку не знайдено | Сергій Петрик</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #ede8e0;
+        --accent-color: #718879;
+        --text-color: #353f37;
+        --glass: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.35),
+          rgba(217, 213, 204, 0.25)
+        );
+        --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+      }
+
+      .container {
+        text-align: center;
+        max-width: 600px;
+      }
+
+      .error-code {
+        font-size: 120px;
+        font-weight: 300;
+        line-height: 1;
+        margin-bottom: 24px;
+        opacity: 0.3;
+        letter-spacing: 8px;
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: 400;
+        margin-bottom: 16px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+        opacity: 0.8;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 16px 40px;
+        font-family: inherit;
+        font-size: 16px;
+        color: var(--text-color);
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        background: var(--glass);
+        border: var(--glass-border);
+        border-radius: 60px;
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        transform: scale(0.98);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      @media (max-width: 768px) {
+        .error-code {
+          font-size: 80px;
+          letter-spacing: 4px;
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        .button {
+          padding: 14px 32px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="error-code">404</div>
+      <h1>Сторінку не знайдено</h1>
+      <p>
+        На жаль, сторінка, яку ви шукаєте, не існує або була переміщена.
+      </p>
+      <a href="/" class="button">На головну</a>
+    </div>
+  </body>
+</html>
