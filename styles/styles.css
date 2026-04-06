@@ -1345,12 +1345,20 @@ behold-widget {
 
   .method-item {
     display: flex;
-
-    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
   }
 
   .method-left {
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
     max-width: 300px;
+  }
+
+  .method-right {
+    flex: 1;
+    min-width: 0;
   }
 
   .how-section {
@@ -1483,4 +1491,45 @@ behold-widget {
   .footer {
     background-position: 60% 15%;
   }
+}
+
+/* Form Status Messages */
+.form-status {
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.form-status.hidden {
+  display: none;
+}
+
+.form-status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-status.success {
+  background: linear-gradient(
+    135deg,
+    rgba(113, 136, 121, 0.15),
+    rgba(113, 136, 121, 0.08)
+  );
+  border: 1px solid rgba(113, 136, 121, 0.3);
+  color: var(--accent-color);
+}
+
+.form-status.error {
+  background: linear-gradient(
+    135deg,
+    rgba(204, 122, 0, 0.15),
+    rgba(204, 122, 0, 0.08)
+  );
+  border: 1px solid rgba(204, 122, 0, 0.3);
+  color: var(--accent-red);
 }
