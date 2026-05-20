@@ -1,20 +1,61 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const floatingCta = document.querySelector('.floating-cta');
-  const ctaButtons = document.querySelectorAll('.cta-button, .floating-cta');
+  const floatingCtaDropdown = document.querySelector('.floating-cta-dropdown');
+  const floatingCta = floatingCtaDropdown?.querySelector('.floating-cta');
+  const ctaDropdowns = document.querySelectorAll('.cta-dropdown, .floating-cta-dropdown, .contact-dropdown');
   const formContainer = document.querySelector('.form-container');
 
-  if (!floatingCta) {
+  if (!floatingCtaDropdown) {
     return;
   }
 
   let hasAnimatedOnce = false; // Щоб анімувати тільки один раз при появі
 
+  // Toggle для випадаючих меню CTA кнопок
+  ctaDropdowns.forEach(dropdown => {
+    const button = dropdown.querySelector('.cta-button, .floating-cta, .contact-dropdown-btn');
+
+    if (!button) return;
+
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      // Закриваємо всі інші dropdown
+      ctaDropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove('active');
+        }
+      });
+
+      // Toggle поточний dropdown
+      dropdown.classList.toggle('active');
+    });
+  });
+
+  // Закриття dropdown при кліку поза ними
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.cta-dropdown, .floating-cta-dropdown, .contact-dropdown')) {
+      ctaDropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
+
+  // Закриття dropdown при натисканні Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      ctaDropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
+    }
+  });
+
   // Показувати/ховати floating кнопку при прокрутці
   const toggleFloatingCta = () => {
     if (window.scrollY > 500) {
-      floatingCta.classList.add('visible');
+      floatingCtaDropdown.classList.add('visible');
     } else {
-      floatingCta.classList.remove('visible');
+      floatingCtaDropdown.classList.remove('visible');
     }
   };
 

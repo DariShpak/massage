@@ -1044,11 +1044,89 @@ behold-widget {
   font-size: 1rem;
 }
 
-/* floating CTA */
-.floating-cta {
+/* CTA Dropdown для hero секції */
+.cta-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.cta-dropdown .cta-button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.cta-options {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.cta-dropdown.active .cta-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateX(-50%) translateY(0);
+}
+
+.cta-option {
+  padding: 0.8rem 1.6rem;
+  background: var(--glass);
+  border: var(--glass-border);
+  backdrop-filter: blur(4px);
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.cta-option:hover {
+  transform: scale(0.98);
+  box-shadow:
+    rgba(0, 0, 0, 0.35) 0px 8px 16px,
+    var(--box-shadow);
+}
+
+/* Floating CTA Dropdown */
+.floating-cta-dropdown {
   position: fixed;
   bottom: 1rem;
-  left: max(1rem, calc((100vw - 1500px) / 2 + 1rem)); /* прив'язка до wrapper */
+  left: max(1rem, calc((100vw - 1500px) / 2 + 1rem));
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(100px);
+  transition: all 0.3s ease;
+}
+
+.floating-cta-dropdown.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-cta-dropdown .floating-cta {
+  position: static;
+  cursor: pointer;
+  font-family: inherit;
+  width: 100%;
+  transform: translateY(0);
   padding: 0.8rem 1.2rem;
   background: var(--glass);
   border: var(--glass-border);
@@ -1061,21 +1139,117 @@ behold-widget {
   letter-spacing: 0.1em;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(100px);
   transition: all 0.3s ease;
 }
 
-.floating-cta.visible {
+.floating-cta-dropdown.visible .floating-cta:hover {
+  transform: translateY(-4px);
+}
+
+.floating-cta-options {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.floating-cta-dropdown.active .floating-cta-options {
   opacity: 1;
   visibility: visible;
+  pointer-events: all;
   transform: translateY(0);
 }
 
-.floating-cta:hover {
+.floating-cta-option {
+  padding: 0.8rem 1.2rem;
+  background: var(--glass);
+  border: var(--glass-border);
+  backdrop-filter: blur(4px);
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.floating-cta-option:hover {
   transform: translateY(-4px);
+  box-shadow:
+    rgba(0, 0, 0, 0.35) 0px 8px 16px,
+    var(--box-shadow);
+}
+
+/* Contact Dropdown в хедері (іконка літачка) */
+.contact-dropdown {
+  position: relative;
+}
+
+.contact-dropdown-btn {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+  min-width: 150px;
+}
+
+.contact-dropdown.active .contact-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.contact-dropdown-item {
+  padding: 0.8rem 1.2rem;
+  background: var(--glass);
+  border: var(--glass-border);
+  backdrop-filter: blur(4px);
+  color: var(--text-color);
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.contact-dropdown-item:hover {
+  transform: scale(0.98);
   box-shadow:
     rgba(0, 0, 0, 0.35) 0px 8px 16px,
     var(--box-shadow);
@@ -1243,13 +1417,15 @@ behold-widget {
     height: 1180px;
   }
 
-  .floating-cta {
-    position: fixed;
+  .floating-cta-dropdown {
     bottom: 2rem;
     left: max(
       2rem,
       calc((100vw - 1500px) / 2 + 2rem)
-    ); /* прив'язка до wrapper */
+    );
+  }
+
+  .floating-cta-dropdown .floating-cta {
     padding: 1rem 1.5rem;
   }
 
